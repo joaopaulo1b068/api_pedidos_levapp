@@ -8,7 +8,9 @@ export class Pedido {
     status,
     clientID,
     clientLabel,
-    clientAddress
+    clientAddress,
+    clientDist,
+    produtos
   }) {
     this.id = id
     this.date = date
@@ -17,7 +19,9 @@ export class Pedido {
     this.status = status
     this.clientLabel = clientLabel
     this.clientID = clientID
-    this.clientAddress = clientAddress
+    this.clientAddress = clientAddress,
+    this.clientDist = clientDist,
+    this.produtos = produtos
   }
 
 }

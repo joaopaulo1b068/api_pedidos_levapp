@@ -1,37 +1,80 @@
+import express from 'express'
 import { Pedido } from './pedido'
+import moment from 'moment'
+import { clients } from './clients'
+import { shops } from './shops'
 
-const pedido = new Pedido({ date: '', id: '2' })
-
+/**
+ * @param {number} max
+ * @returns {number} ==> numero entre 0 e max-1 
+ */
 function SortNum(max) {
-  if (typeof max !== 'number' || max < 1) max = 1
+
+  if (typeof max !== 'number')
+    return 0
+
   return Math.floor(Math.random() * max)
 }
 
-const allow = [
+/**
+ * caracteres permitidos no id
+ */
+const numericChars = [
   '1', '2', '3', '4', '5',
   '6', '7', '8', '9', '0'
 ]
 
+/**
+ * 
+ * @param {number} n => tamanho do id 
+ */
 function GetID(n) {
   if (typeof n !== 'number' || n < 1) n = 1
 
   const arr = []
   while (arr.length < n) {
-    const pos = SortNum(allow.length)
-    arr.push(allow[pos])
+    const pos = SortNum(numericChars.length)
+    arr.push(numericChars[pos])
   }
   return arr.join('')
-
 }
 
-const write = []
+const PORT = process.env.PORT || 8000
+const app = express()
 
-for (let i = 0; i < 10; i++) {
-  write.push(GetID(5))
-}
+app.get('/random/:n', (req, res) => {
 
-// fs = require('fs')
-// fs.writeFile('data.json', JSON.stringify(pedido), function (err) {
-//   if (err) return console.log(err)
-//   console.log('data.json criado com sucesso')
-// })
+  const n = req.params['n']
+
+  const arr = []
+  for (let i = 0; i < n; i++) {
+
+    const hours = SortNum(10)
+    const minutes = SortNum(60)
+    const days = SortNum(4)
+
+    const client = clients[SortNum(clients.length)]
+    const shop = shops[SortNum(shops.length)]
+
+    const pedido = new Pedido({
+      id: GetID(5),
+      date: moment().subtract({hours, minutes, days}).unix().toString(),
+      shopID: shop.id,
+      shopLabel: shop.shopLabel,
+      status: 'Aberto',
+      clientID: client.id,
+      clientLabel: client.clientLabel,
+      clientAddress: client.clientAddress
+    })
+
+    arr.push(pedido)
+
+  }
+
+  res.json(arr)
+
+})
+
+app.listen(PORT, () => {
+  console.log('Online on Port: ', PORT)
+})
