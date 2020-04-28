@@ -59,19 +59,23 @@ app.get('/random/:n', (req, res) => {
     const pedido = new Pedido({
       id: GetID(5),
       date: moment().subtract({hours, minutes, days}).unix().toString(),
-      shopID: shop.id,
-      shopLabel: shop.shopLabel,
+      shop: {
+        id: shop.id,
+        label: shop.shopLabel,
+      },
+      client: {
+        id: client.id,
+        label: client.clientLabel,
+        address: client.clientAddress
+      },
       status: 'Aberto',
-      clientID: client.id,
-      clientLabel: client.clientLabel,
-      clientAddress: client.clientAddress
     })
 
     arr.push(pedido)
 
   }
 
-  res.json(arr)
+  res.json({orders: arr})
 
 })
 
