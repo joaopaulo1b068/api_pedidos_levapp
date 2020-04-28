@@ -3,24 +3,22 @@ export class Pedido {
   constructor({
     id,
     date,
-    shopID,
-    shopLabel,
+    // shopID,
+    // shopLabel,
+    shop,
     status,
-    clientID,
-    clientLabel,
-    clientAddress,
-    clientDist,
+    // clientID,
+    // clientLabel,
+    // clientAddress,
+    // clientDist,
+    client,
     produtos
   }) {
     this.id = id
     this.date = date
-    this.shopLabel = shopLabel
-    this.shopID = shopID
+    this.shop = shop
     this.status = status
-    this.clientLabel = clientLabel
-    this.clientID = clientID
-    this.clientAddress = clientAddress,
-    this.clientDist = clientDist,
+    this.client = client
     this.produtos = produtos
   }
 
