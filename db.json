@@ -33,40 +33,5 @@
     "shopLabel": "Estação do Hamburger",
     "shopID": "23086",
     "status": "Aberto"
-  },
-  {
-    "id": "42322",
-    "date": "1587929302",
-    "shopLabel": "Barraca do Hamburger",
-    "shopID": "85955",
-    "status": "Aberto"
-  },
-  {
-    "id": "86251",
-    "date": "1587760642",
-    "shopLabel": "Estação do Hamburger",
-    "shopID": "23086",
-    "status": "Aberto"
-  },
-  {
-    "id": "60361",
-    "date": "1587940762",
-    "shopLabel": "Dogao na Hora",
-    "shopID": "94521",
-    "status": "Aberto"
-  },
-  {
-    "id": "82824",
-    "date": "1587829642",
-    "shopLabel": "Parada do Lanche",
-    "shopID": "98739",
-    "status": "Aberto"
-  },
-  {
-    "id": "15410",
-    "date": "1587760102",
-    "shopLabel": "Parada do Lanche",
-    "shopID": "98739",
-    "status": "Aberto"
   }
 ]
