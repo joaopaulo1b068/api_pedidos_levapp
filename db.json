@@ -4,99 +4,69 @@
     "date": "1587932482",
     "shopLabel": "Doce Sabor",
     "shopID": "43558",
-    "status": "Aberto",
-    "clientLabel": "Ana Rodrigues",
-    "clientID": "19009",
-    "clientAddress": "Rua Espirito Santo, 23"
+    "status": "Aberto"
   },
   {
     "id": "74498",
     "date": "1587825142",
     "shopLabel": "Parada do Lanche",
     "shopID": "98739",
-    "status": "Aberto",
-    "clientLabel": "Bruna Silva",
-    "clientID": "08553",
-    "clientAddress": "Rua Platina, 78"
+    "status": "Aberto"
   },
   {
     "id": "16793",
     "date": "1587766822",
     "shopLabel": "Mister Lanches",
     "shopID": "56520",
-    "status": "Aberto",
-    "clientLabel": "Maria Souza",
-    "clientID": "87405",
-    "clientAddress": "Rua Beija Flor, 12"
+    "status": "Aberto"
   },
   {
     "id": "07660",
     "date": "1587743122",
     "shopLabel": "Barraca do Hamburger",
     "shopID": "85955",
-    "status": "Aberto",
-    "clientLabel": "Bruna Silva",
-    "clientID": "08553",
-    "clientAddress": "Rua Platina, 78"
+    "status": "Aberto"
   },
   {
     "id": "92287",
     "date": "1587756922",
     "shopLabel": "Estação do Hamburger",
     "shopID": "23086",
-    "status": "Aberto",
-    "clientLabel": "Bruna Silva",
-    "clientID": "08553",
-    "clientAddress": "Rua Platina, 78"
+    "status": "Aberto"
   },
   {
     "id": "42322",
     "date": "1587929302",
     "shopLabel": "Barraca do Hamburger",
     "shopID": "85955",
-    "status": "Aberto",
-    "clientLabel": "José Gomes",
-    "clientID": "95149",
-    "clientAddress": "Rua Caiobá, 54"
+    "status": "Aberto"
   },
   {
     "id": "86251",
     "date": "1587760642",
     "shopLabel": "Estação do Hamburger",
     "shopID": "23086",
-    "status": "Aberto",
-    "clientLabel": "Pedro Araujo",
-    "clientID": "93696",
-    "clientAddress": "Rua José Abraao, 51"
+    "status": "Aberto"
   },
   {
     "id": "60361",
     "date": "1587940762",
     "shopLabel": "Dogao na Hora",
     "shopID": "94521",
-    "status": "Aberto",
-    "clientLabel": "Adriana Almeida",
-    "clientID": "15151",
-    "clientAddress": "Rua Tiete, 65"
+    "status": "Aberto"
   },
   {
     "id": "82824",
     "date": "1587829642",
     "shopLabel": "Parada do Lanche",
     "shopID": "98739",
-    "status": "Aberto",
-    "clientLabel": "Ana Rodrigues",
-    "clientID": "19009",
-    "clientAddress": "Rua Espirito Santo, 23"
+    "status": "Aberto"
   },
   {
     "id": "15410",
     "date": "1587760102",
     "shopLabel": "Parada do Lanche",
     "shopID": "98739",
-    "status": "Aberto",
-    "clientLabel": "Joao dos Santos",
-    "clientID": "48009",
-    "clientAddress": "Rua Pará, 82"
+    "status": "Aberto"
   }
 ]
