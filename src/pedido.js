@@ -3,14 +3,8 @@ export class Pedido {
   constructor({
     id,
     date,
-    // shopID,
-    // shopLabel,
     shop,
     status,
-    // clientID,
-    // clientLabel,
-    // clientAddress,
-    // clientDist,
     client,
     produtos
   }) {

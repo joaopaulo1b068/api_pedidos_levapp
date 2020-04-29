@@ -1,8 +1,11 @@
+require('dotenv').config()
+
 import express from 'express'
 import { Pedido } from './pedido'
 import moment from 'moment'
-import { clients } from './clients'
-import { shops } from './shops'
+import { clients } from './lists/clients'
+import { shops } from './lists/shops'
+import { Database } from './database/database'
 
 /**
  * @param {number} max
@@ -42,6 +45,12 @@ function GetID(n) {
 const PORT = process.env.PORT || 8000
 const app = express()
 
+Database
+  .authenticate()
+  .catch(err => {
+    console.error('ERROR ON DATABASE CONN', err);
+  })
+
 app.get('/random/:n', (req, res) => {
 
   const n = req.params['n']
@@ -58,7 +67,7 @@ app.get('/random/:n', (req, res) => {
 
     const pedido = new Pedido({
       id: GetID(5),
-      date: moment().subtract({hours, minutes, days}).unix().toString(),
+      date: moment().subtract({ hours, minutes, days }).unix().toString(),
       shop: {
         id: shop.id,
         label: shop.shopLabel,
@@ -75,7 +84,7 @@ app.get('/random/:n', (req, res) => {
 
   }
 
-  res.json({orders: arr})
+  res.json({ orders: arr })
 
 })
 
