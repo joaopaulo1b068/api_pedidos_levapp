@@ -7,8 +7,7 @@
     "build": "babel src --out-dir dist",
     "start": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "babel src --watch --out-dir dist && nodemon dist/server.js",
-    "__build": "npx babel src --out-dir dist --presets=@babel/preset-env"
+    "dev": "concurrently \"babel src --watch --out-dir dist\"  \"nodemon dist/server.js\""
   },
   "repository": {
     "type": "git",
@@ -21,14 +20,19 @@
   },
   "homepage": "https://gitlab.com/ravazi1085/api_pedidos#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "pg": "^8.0.3",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.5",
+    "concurrently": "^5.2.0",
     "json-server": "^0.16.1",
     "nodemon": "^2.0.3"
   }
