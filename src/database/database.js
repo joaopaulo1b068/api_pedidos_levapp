@@ -1,6 +1,9 @@
 import Sequelize from 'sequelize'
+import { clients } from '../lists/clients'
+import { shops } from '../lists/shops'
+import { ENV } from '../utils/dotenv'
 
-export const Database = new Sequelize('postgres://user:pass@0.0.0.0:5432/postgres', {
+export const Database = new Sequelize(ENV('DATABASE_URL'), {
   define: {
     timestamps: false
   },
@@ -13,11 +16,49 @@ export const Database = new Sequelize('postgres://user:pass@0.0.0.0:5432/postgre
 })
 
 const Order = Database.define('Order', {
-  date: Sequelize.STRING
+  id: {
+    type: Sequelize.STRING,
+    primaryKey: true,
+  },
+  date: Sequelize.STRING,
+  status: Sequelize.STRING,
 })
 
-Order.create({
-  date: '987'
-}).then(row => {
-  console.log('order: ', row.id)
+const Shop = Database.define('Shop', {
+  id: {
+    type: Sequelize.STRING,
+    primaryKey: true,
+  },
+  label: Sequelize.STRING,
+})
+
+const Client = Database.define('Client', {
+  id: {
+    type: Sequelize.STRING,
+    primaryKey: true,
+  },
+  label: Sequelize.STRING,
+  address: Sequelize.STRING,
+})
+
+Client.hasMany(Order, { foreignKey: 'fk_client' })
+Shop.hasMany(Order, { foreignKey: 'fk_shop' })
+
+Database.sync({ force: true }).then( () => {
+
+  clients.forEach(item => {
+    Client.create({
+      id: item.id, 
+      address: item.clientAddress, 
+      label: item.clientLabel
+    })
+  })
+
+  shops.forEach(item => {
+    Shop.create({
+      id: item.id, 
+      label: item.shopLabel
+    })
+  })
+
 })
