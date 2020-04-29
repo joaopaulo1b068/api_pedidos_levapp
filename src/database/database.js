@@ -1,9 +1,9 @@
 import Sequelize from 'sequelize'
 import { clients } from '../lists/clients'
 import { shops } from '../lists/shops'
-import { ENV } from '../utils/dotenv'
 
-export const Database = new Sequelize(ENV('DATABASE_URL'), {
+export const Database = new Sequelize(process.env.DATABASE_URL ||
+  'postgres://user:pass@0.0.0.0:5432/postgres', {
   define: {
     timestamps: false
   },
@@ -44,19 +44,19 @@ const Client = Database.define('Client', {
 Client.hasMany(Order, { foreignKey: 'fk_client' })
 Shop.hasMany(Order, { foreignKey: 'fk_shop' })
 
-Database.sync({ force: true }).then( () => {
+Database.sync({ force: true }).then(() => {
 
   clients.forEach(item => {
     Client.create({
-      id: item.id, 
-      address: item.clientAddress, 
+      id: item.id,
+      address: item.clientAddress,
       label: item.clientLabel
     })
   })
 
   shops.forEach(item => {
     Shop.create({
-      id: item.id, 
+      id: item.id,
       label: item.shopLabel
     })
   })

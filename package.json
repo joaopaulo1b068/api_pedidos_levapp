@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "build": "babel src --out-dir dist",
-    "start": "node dist/server.js",
+    "start": "node -r dotenv/config dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"babel src --watch --out-dir dist\"  \"nodemon dist/server.js\""
   },

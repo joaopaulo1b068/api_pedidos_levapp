@@ -1,17 +1,15 @@
-require('dotenv').config()
-
 import express from 'express'
-import { Pedido } from './pedido'
-import moment from 'moment'
-import { clients } from './lists/clients'
-import { shops } from './lists/shops'
 import { Database } from './database/database'
 import { AppRouter } from './routes/routes'
+
+export function ENV (key) {
+  return process.env[key]
+}
 
 Database
   .authenticate()
   .catch(err => {
-    console.error('ERROR ON DATABASE CONN', err);
+    console.error('ERROR ON DATABASE CONN');
   })
 
 const app = express()
