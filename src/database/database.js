@@ -15,50 +15,66 @@ export const Database = new Sequelize(process.env.DATABASE_URL ||
   }
 })
 
-const Order = Database.define('Order', {
+export const Order = Database.define('_order', {
   id: {
     type: Sequelize.STRING,
     primaryKey: true,
   },
   date: Sequelize.STRING,
   status: Sequelize.STRING,
-})
+}, { freezeTableName: true })
 
-const Shop = Database.define('Shop', {
+export const Shop = Database.define('shop', {
   id: {
     type: Sequelize.STRING,
     primaryKey: true,
   },
   label: Sequelize.STRING,
-})
+}, {freezeTableName: true})
 
-const Client = Database.define('Client', {
+export const Client = Database.define('client', {
   id: {
     type: Sequelize.STRING,
     primaryKey: true,
   },
   label: Sequelize.STRING,
   address: Sequelize.STRING,
-})
+}, {freezeTableName: true})
 
 Client.hasMany(Order, { foreignKey: 'fk_client' })
 Shop.hasMany(Order, { foreignKey: 'fk_shop' })
 
-Database.sync({ force: true }).then(() => {
+Database.sync().then(() => {
 
-  clients.forEach(item => {
-    Client.create({
-      id: item.id,
-      address: item.clientAddress,
-      label: item.clientLabel
+  clients.forEach( async item => {
+
+    const results = await Client.findAll({
+      where: {id: item.id}
     })
+
+    if (!results.length) {
+      await Client.create({
+          id: item.id,
+          address: item.clientAddress,
+          label: item.clientLabel        
+      })
+    }
+    
   })
 
-  shops.forEach(item => {
-    Shop.create({
-      id: item.id,
-      label: item.shopLabel
+  shops.forEach( async item => {
+
+    const results = await Shop.findAll({
+      where: {id: item.id}
     })
+
+    if (!results.length) {
+      await Shop.create({
+          id: item.id,
+          label: item.shopLabel
+      })
+    }
+    
   })
 
 })
