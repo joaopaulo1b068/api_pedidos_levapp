@@ -28,6 +28,9 @@ app.post('/order', (req, res) => {
     .catch(err => res.status(500).send(err))
 })
 
+/**
+ * Lista Completa de Pedidos
+ */
 app.get('/order', (req, res) => {
 
   Database
@@ -47,6 +50,9 @@ app.get('/order', (req, res) => {
     })
 })
 
+/**
+ * Pesquisa de Pedido por ID
+ */
 app.get('/order/:id', (req, res) => {
 
   Database
@@ -65,6 +71,24 @@ app.get('/order/:id', (req, res) => {
     .catch(err => {
       res.status(500).send(err)
     })
+})
+
+app.patch('/order/:id', (req, res) => {
+  
+  const _status = ['ABERTO', 'RETIRADA', 'ENTREGA', 'CONCLUIDO']
+  const id = req.params['id']
+  const status = req.body['status']
+
+  console.log(status)
+  if (status.indexOf(status) < 0){
+    return res.status(400).send('provide new STATUS on body')
+  }
+
+  Database
+    .query(`UPDATE _order SET status = '${status}' WHERE id = '${id}'`)
+    .then(resp => res.json(resp))
+    .catch(err => res.status(500).json(err))
+
 })
 
 export const AppRouter = app

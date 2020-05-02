@@ -13,6 +13,11 @@ Database
   })
 
 const app = express()
+
+const _parser = require('body-parser')
+const parser = _parser.json()
+
+app.use(parser)
 app.use(AppRouter)
 
 const PORT = process.env.PORT || 8000
