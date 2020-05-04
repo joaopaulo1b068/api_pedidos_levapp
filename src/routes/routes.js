@@ -20,7 +20,7 @@ app.post('/order', (req, res) => {
     fk_client: client.id,
     fk_shop: shop.id,
     date: moment().unix().toString(),
-    status: 'Aberto'
+    status: 'ABERTO'
   })
     .then(resp => {
       res.json(resp)
