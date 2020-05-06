@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "start": "node -r dotenv/config dist/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "concurrently \"babel src --watch --out-dir dist\"  \"nodemon dist/server.js\""
   },
   "repository": {
@@ -32,10 +32,12 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
+    "@babel/core": "^7.9.6",
     "@babel/node": "^7.8.7",
-    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-env": "^7.9.6",
+    "babel-jest": "^26.0.1",
     "concurrently": "^5.2.0",
+    "jest": "^26.0.1",
     "json-server": "^0.16.1",
     "nodemon": "^2.0.3"
   }
