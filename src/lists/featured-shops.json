@@ -1,0 +1,48 @@
+{
+  "shops": [
+    {
+      "name": "Lanchonente da Maria",
+      "category": "lanchonete",
+      "evaluation": 4.5,
+      "time_delivery": 50,
+      "image_url": "https://res.cloudinary.com/hdr99do0x/image/upload/v1588972190/MOCK_API/download_f1opy6.jpg",
+      "id": "5648"
+    },
+    {
+      "name": "Puro Sabor",
+      "category": "lanchonete",
+      "evaluation": 4,
+      "time_delivery": 40,
+      "image_url": "https://res.cloudinary.com/hdr99do0x/image/upload/v1588972190/MOCK_API/download_2_xb291y.jpg",
+      "id": "7863"
+    },
+    {
+      "name": "Pizza Toda Hora",
+      "category": "pizzaria",
+      "evaluation": 4,
+      "time_delivery": 70,
+      "image_url": "https://res.cloudinary.com/hdr99do0x/image/upload/v1588972190/MOCK_API/163-1636340_user-avatar-icon-avatar-transparent-user-icon-png_wbygju.png",
+      "id": "5198"
+    }
+  ],
+  "products": [
+    {
+      "name": "X-Salada",
+      "price": 15.5,
+      "image_url": "https://res.cloudinary.com/hdr99do0x/image/upload/v1588972263/MOCK_API/download_5_as2cfg.jpg",
+      "id": "8123"
+    },
+    {
+      "name": "Cachorro Quente",
+      "price": 12,
+      "image_url": "https://res.cloudinary.com/hdr99do0x/image/upload/v1588972263/MOCK_API/download_4_ocq0di.jpg",
+      "id": "9632"
+    },
+    {
+      "name": "Pizza Fria",
+      "price": 25,
+      "image_url": "https://res.cloudinary.com/hdr99do0x/image/upload/v1588972263/MOCK_API/download_3_widsj2.jpg",
+      "id": "5486"
+    }
+  ]
+}
