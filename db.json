@@ -56,8 +56,8 @@
       "shop_name": "Lanchonete da Maria",
       "image_url": "https://res.cloudinary.com/hdr99do0x/image/upload/v1588972263/MOCK_API/download_4_ocq0di.jpg",
       "id": "9632",
-      aditionals: [],
-      options: []
+      "aditionals": [],
+      "options": []
     },
     {
       "name": "Pizza Fria",
@@ -65,8 +65,8 @@
       "shop_name": "Pizza Toda Hora",
       "image_url": "https://res.cloudinary.com/hdr99do0x/image/upload/v1588972263/MOCK_API/download_3_widsj2.jpg",
       "id": "5486",
-      aditionals: [],
-      options: []
+      "aditionals": [],
+      "options": []
     }
   ]
 }
