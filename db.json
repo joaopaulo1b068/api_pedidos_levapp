@@ -33,19 +33,24 @@
       "image_url": "https://res.cloudinary.com/hdr99do0x/image/upload/v1588972263/MOCK_API/download_5_as2cfg.jpg",
       "id": "8123",
       "aditionals": [{
+          "id": "1",
           "name": "Molho da Casa",
           "price": 2
         }, {
+          "id": "2",
           "name": "Catupiry",
           "price": 1.5
         }, {
+          "id": "3",
           "name": "OPT_3",
           "price": 3.5
       }],
       "options": [{
+        "id": "1",
         "name": "Sabor",
         "values": ["SABOR_1", "SABOR_2", "SABOR_3"]
       }, {
+        "id": "2",
         "name": "Acompanhamento",
         "values": ["ACOMP_1", "ACOMP_2", "ACOMP_3"]
       }]
